@@ -19,6 +19,7 @@
         <link href="styles/first_page.css" rel="stylesheet">
         <link href="styles/team.css" rel="stylesheet">
         <link href="styles/about.css" rel="stylesheet">
+        <link href="styles/store.css" rel="stylesheet">
 
     </head>
 
@@ -66,9 +67,37 @@
         </section>
 
         <section id="products" class="nw-s">
-            <h1>Seleção de Produto</h1>
+            <h1>Seleção de Produtos</h1>
             <h6>Desfrute e saboreie os nossos produtos internacionalmente.</h6>
+            <div class="content-wrapper text-center">
+                <div class="products">
+                    <a class="product" data-toggle="modal" data-target="#exampleModalCenter" id="azeitonasButton">
+                        <img src="img/azeitonas.jpeg" width="200" height="250">
+                        <span class="name">Azeitonas Mistas</span>
+                        <span class="price">15.99 $/kg</span>
+                    </a>
+                    <a class="product">
+                        <img src="img/castanhas.jpeg" width="200" height="250">
+                        <span class="name">Castanhas Bravas</span>
+                        <span class="price">25.99 $/kg</span>
+                    </a>
+                    <a class="product">
+                        <img src="img/gallo_classico.png" width="200" height="250">
+                        <span class="name">Gallo Classico</span>
+                        <span class="price">5.99 $/l</span>
+                    </a>
+                    <a class="product">
+                        <img src="img/rosmaninho.jpeg" width="200" height="250">
+                        <span class="name">Rosmaninho Virgem</span>
+                        <span class="price">4.99 $/l</span>
+                    </a>
+                </div>
+            </div>
         </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        </div>
 
         <!-- Footer -->
         <footer>
@@ -101,6 +130,16 @@
 
         <!-- JAVASCRIPT FOR THE HEADER-->
         <script type="text/javascript">
+            var produto = document.getElementById('azeitonasButton');
+
+            produto.addEventListener('click', function() {
+                if(!document.getElementById('azeitonas')) {
+                    document.getElementById('exampleModalCenter').innerHTML += getProduct('azeitonas');
+                }
+            });
+        </script>
+
+        <script type="text/javascript">
             // When the user scrolls the page, execute myFunction 
             window.onscroll = function() {myFunction()};
 
@@ -121,6 +160,7 @@
         </script>
     
         <!-- JAVASCRIPT TO GENERATE A MENU BUTTON - RESPONSIVE WAY-->
+        <script type="text/javascript" src="../js/product.js"></script>
         <!-- <script type="text/javascript" src="../js/header.js"></script> -->
 
         <!-- SCRIPT FILES -->
