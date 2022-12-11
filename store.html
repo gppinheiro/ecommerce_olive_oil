@@ -28,71 +28,27 @@
         <header id="nav-header">
             <div class="menu_nav">
                 <ul class="nav__links">
-                    <li><a href=""><i class="bi-house icon"></i> Início</a></li>
-                    <li><a href="#products"><i class="bi-bag icon"></i> Loja</a></li>
+                    <li><a href="index.html"><i class="bi-house icon"></i> Início</a></li>
+                    <li><a href="index.html#products"><i class="bi-bag icon"></i> Loja</a></li>
                 </ul>
             </div>
 
             <div class="logo">
-                <a href=""><img src="img/logo.png" alt="logo" width="150"></a>
+                <a href="index.html"><img src="img/logo.png" alt="logo" width="150"></a>
             </div>
 
             <div class="main_nav">
                 <ul class="nav__links">
-                    <li><a href="store.html" id="icon-basket"><i class="bi-basket3 icon"></i></a></li>
+                    <li><a href="" id="icon-basket"><i class="bi-basket3 icon"></i></a></li>
                     <li><a href="#"><i class="bi-person icon"></i></a></li>
                 </ul>
             </div>
         </header>
 
-        <section id="home">
-            <div class="first_page">
-                <div class="text_middle">
-                    <h1>Olive Oil</h1>
-                    <span class="subheading">Azeite de saborear e chorar por mais</span>
-                    <button type="button" class="btn btn-warning">Visite a nossa loja <i class="bi-bag"></i></button>
-                </div>
-            </div>
+        <section id="cart" class="nw-s">
+            <h1>Carrinho</h1>
+            <h6>Obrigado por comprar connosco</h6>
         </section>
-
-        <section id="history" class="nw-s">
-            <h1>Nossa História</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </section>
-
-        <section id="products" class="nw-s">
-            <h1>Seleção de Produtos</h1>
-            <h6>Desfrute e saboreie os nossos produtos internacionalmente.</h6>
-            <div class="content-wrapper text-center">
-                <div class="products">
-                    <a class="product" data-toggle="modal" data-target="#exampleModalCenter" id="azeitonasButton">
-                        <img src="img/azeitonas.jpeg" width="200" height="250">
-                        <span class="name">Azeitonas Mistas</span>
-                        <span class="price">15.99 $/kg</span>
-                    </a>
-                    <a class="product">
-                        <img src="img/castanhas.jpeg" width="200" height="250">
-                        <span class="name">Castanhas Bravas</span>
-                        <span class="price">25.99 $/kg</span>
-                    </a>
-                    <a class="product">
-                        <img src="img/gallo_classico.png" width="200" height="250">
-                        <span class="name">Gallo Classico</span>
-                        <span class="price">5.99 $/l</span>
-                    </a>
-                    <a class="product">
-                        <img src="img/rosmaninho.jpeg" width="200" height="250">
-                        <span class="name">Rosmaninho Virgem</span>
-                        <span class="price">4.99 $/l</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        </div>
 
         <!-- Footer -->
         <footer>
@@ -123,16 +79,11 @@
             </div>
         </footer>
 
-        <script type="text/javascript" src="../js/product.js"></script>
-
         <!-- JAVASCRIPT FOR THE HEADER-->
         <script type="text/javascript">
-            var produto = document.getElementById('azeitonasButton');
-
-            produto.addEventListener('click', function() {
-                if(!document.getElementById('azeitonas')) {
-                    document.getElementById('exampleModalCenter').innerHTML += getProduct('azeitonas');
-                }
+            window.addEventListener("load", (event) => {
+                document.getElementById('cart').innerHTML += showCart();
+                updateBadge();
             });
         </script>
 
@@ -157,7 +108,7 @@
         </script> -->
     
         <!-- JAVASCRIPT TO GENERATE A MENU BUTTON - RESPONSIVE WAY-->
-        <!-- <script type="text/javascript" src="../js/product.js"></script> -->
+        <script type="text/javascript" src="../js/product.js"></script>
         <!-- <script type="text/javascript" src="../js/header.js"></script> -->
 
         <!-- SCRIPT FILES -->
