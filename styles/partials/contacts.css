@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+#message-section {
+  padding-bottom: 50px;
+}
+
+#message-section:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col-right, .col-left {
+  width: 50%;
+  float: left;
+}
+
+.col-right {
+  padding-left: 1%;
+}
+
+.col-left {
+  width: 40%;
+  padding-right: 1%;
+  margin-left: 5%;
+  padding-top: 10%;
+}
+
+.col-right .button_send {
+  overflow: visible;
+}
+
+.col-right .button_send, select {
+  text-transform: none;
+}
+
+.col-right .button_send, input, select, textarea {
+  color: #232931;
+  font: inherit;
+  margin: 0;
+}
+
+.col-right input {
+  line-height: normal;
+}
+
+.col-right textarea {
+  overflow: auto;
+}
+
+.col-right #container {
+  border: solid 3px #ca5a56;
+  max-width: 768px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.col-right form {
+  padding: 37.5px;
+  margin: 50px 0;
+}
+
+.col-right h1 {
+  margin-top: 0.5rem;
+  color: #232931;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.col-right .underline {
+  border-bottom: solid 2px #232931;
+  margin: -0.25em auto;
+  width: 120px;
+}
+
+.col-right .icon_wrapper {
+  margin: 50px auto 0;
+  width: 100%;
+}
+
+.col-right .icon {
+  display: block;
+  fill: #232931;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+
+.col-right .email {
+  float: right;
+  width: 45%;
+}
+
+.col-right input[type=text], .col-right input[type=email], select, textarea {
+  background: none;
+  border: none;
+  border-bottom: solid 2px #474544;
+  color: #474544;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0em 0 1.875em 0;
+  padding: 0 0 0.875em 0;
+  text-transform: uppercase;
+  width: 100%;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.col-right input[type=text]:focus, .col-right input[type=email]:focus, textarea:focus {
+  outline: none;
+  padding: 0 0 0.875em 0;
+}
+
+.col-right .message {
+  float: none;
+}
+
+.col-right .name {
+  float: left;
+  width: 45%;
+}
+
+.col-right select {
+  background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png") no-repeat right;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.col-right select::-ms-expand {
+  display: none;
+}
+
+.col-right .subject {
+  width: 100%;
+}
+
+.col-right .telephone {
+  width: 100%;
+}
+
+.col-right textarea {
+  line-height: 150%;
+  height: 150px;
+  resize: none;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+  color: #232931;
+}
+
+:-moz-placeholder {
+  color: #232931;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: #232931;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #232931;
+}
+
+.col-right #form_button {
+  background: none;
+  border: solid 2px #232931;
+  color: #232931;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 35px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.col-right #form_button:hover {
+  background: #232931;
+  color: #F2F3EB;
+}
+
+@media screen and (max-width: 768px) {
+  .col-right #container {
+    margin: 20px auto;
+    width: 95%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .col-right h1 {
+    font-size: 26px;
+  }
+  .col-right .underline {
+    width: 68px;
+  }
+  .col-right #form_button {
+    padding: 15px 25px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .col-right h1 {
+    font-size: 18px;
+  }
+  .col-right .icon {
+    height: 35px;
+    width: 35px;
+  }
+  .col-right .underline {
+    width: 53px;
+  }
+  .col-right input[type=text], input[type=email], select, textarea {
+    font-size: 0.875em;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .col-left {
+    width: 75%;
+    margin-left: 12.5%;
+  }
+  .col-right {
+    width: 75%;
+    margin-left: 12.5%;
+  }
+}
+@media only screen and (min-height: 1000px) {
+  footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+  }
+}/*# sourceMappingURL=contacts.css.map */
