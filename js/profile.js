@@ -1,3 +1,12 @@
+import {Order} from './order.js';
+
+const order = new Order();
+
+const account = document.getElementById('account');
+const orders = document.getElementById('orders');
+const myAccount = document.getElementById('my-account');
+const myOrders = document.getElementById('my-orders');
+
 const general = document.getElementById('general');
 const address = document.getElementById('address');
 const password = document.getElementById('password');
@@ -8,6 +17,22 @@ const accountPassword = document.getElementById('account-password');
 class Profile {
     
     addEventHandlers() {
+        account.onclick = () => {
+            account.classList.add("active");
+            orders.classList.remove("active");
+            myAccount.style.display = 'block';
+            myOrders.style.display = 'none';
+        }
+
+        orders.onclick = () => {
+            account.classList.remove("active");
+            orders.classList.add("active");
+            myAccount.style.display = 'none';
+            myOrders.style.display = 'block';
+            order.renderOrder();
+        }
+
+
         general.onclick = () => {
             general.classList.add("active");
             address.classList.remove("active");
