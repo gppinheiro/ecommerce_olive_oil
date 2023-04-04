@@ -1,6 +1,6 @@
-import {Order} from './order.js';
+import {Orders} from './orders.js';
 
-const order = new Order();
+const ordersClass = new Orders();
 
 const account = document.getElementById('account');
 const orders = document.getElementById('orders');
@@ -29,7 +29,7 @@ class Profile {
             orders.classList.add("active");
             myAccount.style.display = 'none';
             myOrders.style.display = 'block';
-            order.renderOrder();
+            ordersClass.renderOrder();
         }
 
 
