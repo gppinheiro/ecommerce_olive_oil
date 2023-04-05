@@ -7,6 +7,9 @@
 @import './partials/team.scss';
 
 body {
+    min-height: 100vh;
+    display:flex; 
+    flex-direction:column;
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -15,6 +18,10 @@ body {
     line-height: 1.5;
     color: #212529;
     background-color: #fff; 
+
+    div {
+        flex:1;
+    }
 }
 
 li, a, button {
