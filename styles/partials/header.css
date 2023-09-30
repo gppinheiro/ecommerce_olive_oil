@@ -1,44 +1,41 @@
-/*-- HEADER --*/
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 24px 5%;
-  left: 0;
-  height: 75px;
+  max-height: 75px;
   background-color: #fff;
 }
-
-header div {
-  width: calc((90% - 24px - 24px) / 3);
-}
-
 header a {
   font-family: "Fira Sans", sans-serif;
   display: block;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 1em;
+  line-height: 1em;
   transition: all 0.2s linear;
   color: #1b1b1b;
 }
-
 header a:hover {
   color: #8b763d;
 }
-
-.menu_nav {
-  order: 1;
-  text-align: left;
+header div {
+  display: flex;
+  flex: 1;
 }
-
-.logo {
-  order: 2;
-  text-align: center;
+header div.menu {
+  gap: 1rem;
+  padding-left: 5rem;
 }
-
-.main_nav {
-  order: 3;
-  text-align: right;
+header div.logo {
+  justify-content: center;
+}
+header div.icons {
+  justify-content: right;
+  height: 100%;
+}
+header div.icons a {
+  display: flex;
+  justify-content: center;
+  border-left: 1px #1b1b1b solid;
+  flex: 1;
+  max-width: 75px;
 }
 
 .icon {

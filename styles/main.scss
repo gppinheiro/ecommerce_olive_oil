@@ -1,8 +1,8 @@
+@import './partials/header.scss';
 @import './partials/about.scss';
 @import './partials/contacts.scss';
 @import './partials/first_page.scss';
 @import './partials/footer.scss';
-@import './partials/header.scss';
 @import './partials/store.scss';
 @import './partials/team.scss';
 
@@ -18,10 +18,6 @@ body {
     line-height: 1.5;
     color: #212529;
     background-color: #fff; 
-
-    div {
-        flex:1;
-    }
 }
 
 li, a, button {

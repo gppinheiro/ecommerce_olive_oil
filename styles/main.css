@@ -1,3 +1,88 @@
+header {
+  display: flex;
+  align-items: center;
+  max-height: 75px;
+  background-color: #fff;
+}
+header a {
+  font-family: "Fira Sans", sans-serif;
+  display: block;
+  font-size: 1em;
+  line-height: 1em;
+  transition: all 0.2s linear;
+  color: #1b1b1b;
+}
+header a:hover {
+  color: #8b763d;
+}
+header div {
+  display: flex;
+  flex: 1;
+}
+header div.menu {
+  gap: 1rem;
+  padding-left: 5rem;
+}
+header div.logo {
+  justify-content: center;
+}
+header div.icons {
+  justify-content: right;
+  height: 100%;
+}
+header div.icons a {
+  display: flex;
+  justify-content: center;
+  border-left: 1px #1b1b1b solid;
+  flex: 1;
+  max-width: 75px;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.nav__links {
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 8px;
+}
+
+.menu-button {
+  display: none;
+}
+
+.menu-button .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #212529;
+}
+
+.badge {
+  color: #212529;
+  padding: 0;
+}
+
+.badge:after {
+  content: attr(value);
+  font-size: 12px;
+  background: red;
+  border-radius: 50%;
+  padding: 0 5px;
+  position: relative;
+  left: -8px;
+  top: -10px;
+  opacity: 0.9;
+}
+
 .section-about {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -416,94 +501,6 @@ footer a {
 }
 footer .copyrigths {
   text-align: center;
-}
-
-/*-- HEADER --*/
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 5%;
-  left: 0;
-  height: 75px;
-  background-color: #fff;
-}
-
-header div {
-  width: calc((90% - 24px - 24px) / 3);
-}
-
-header a {
-  font-family: "Fira Sans", sans-serif;
-  display: block;
-  font-size: 16px;
-  line-height: 18px;
-  transition: all 0.2s linear;
-  color: #1b1b1b;
-}
-
-header a:hover {
-  color: #8b763d;
-}
-
-.menu_nav {
-  order: 1;
-  text-align: left;
-}
-
-.logo {
-  order: 2;
-  text-align: center;
-}
-
-.main_nav {
-  order: 3;
-  text-align: right;
-}
-
-.icon {
-  font-size: 1.5rem;
-}
-
-.nav__links {
-  align-items: center;
-  padding: 0px;
-  margin: 0px;
-}
-
-.nav__links li {
-  display: inline-block;
-  padding: 0px 8px;
-}
-
-.menu-button {
-  display: none;
-}
-
-.menu-button .bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  transition: all 0.3s ease-in-out;
-  background-color: #212529;
-}
-
-.badge {
-  color: #212529;
-  padding: 0;
-}
-
-.badge:after {
-  content: attr(value);
-  font-size: 12px;
-  background: red;
-  border-radius: 50%;
-  padding: 0 5px;
-  position: relative;
-  left: -8px;
-  top: -10px;
-  opacity: 0.9;
 }
 
 /*Loja em Si*/
@@ -1064,9 +1061,6 @@ body {
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
-}
-body div {
-  flex: 1;
 }
 
 li, a, button {
