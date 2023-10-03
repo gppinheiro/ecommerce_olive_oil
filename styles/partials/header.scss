@@ -3,16 +3,26 @@
 header {
     display: flex;
     align-items: center;
-    max-height: $header-height;
+    height: $header-height;
     background-color: $white;
 
     & a {
         font-family: $primary-font-family;
-        display: block;
+        display: flex;
         font-size: 1em;
         line-height: 1em;
         transition: all 0.2s linear;
         color: $black;
+        align-items: center;
+        gap: 0.5rem;
+
+        & span {
+            font-size: 32px !important;
+        }
+
+        & p {
+            margin: 0;
+        }
     }
 
     & a:hover {
@@ -25,11 +35,12 @@ header {
 
         &.menu {
             gap: 1rem;
-            padding-left: 5rem;
+            margin-left: 5rem;
         }
 
         &.logo {
             justify-content: center;
+            margin-left: -5rem;
         }
 
         &.icons {
@@ -37,9 +48,8 @@ header {
             height: 100%;
 
             & a {
-                display: flex;
                 justify-content: center;
-                border-left: 1px $black solid;
+                border-left: 1px $brown-gold solid;
                 flex: 1;
                 max-width: $header-height;
             }

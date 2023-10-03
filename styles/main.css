@@ -1,16 +1,24 @@
 header {
   display: flex;
   align-items: center;
-  max-height: 75px;
+  height: 8vh;
   background-color: #fff;
 }
 header a {
   font-family: "Fira Sans", sans-serif;
-  display: block;
+  display: flex;
   font-size: 1em;
   line-height: 1em;
   transition: all 0.2s linear;
   color: #1b1b1b;
+  align-items: center;
+  gap: 0.5rem;
+}
+header a span {
+  font-size: 32px !important;
+}
+header a p {
+  margin: 0;
 }
 header a:hover {
   color: #8b763d;
@@ -21,21 +29,21 @@ header div {
 }
 header div.menu {
   gap: 1rem;
-  padding-left: 5rem;
+  margin-left: 5rem;
 }
 header div.logo {
   justify-content: center;
+  margin-left: -5rem;
 }
 header div.icons {
   justify-content: right;
   height: 100%;
 }
 header div.icons a {
-  display: flex;
   justify-content: center;
-  border-left: 1px #1b1b1b solid;
+  border-left: 1px #8b763d solid;
   flex: 1;
-  max-width: 75px;
+  max-width: 8vh;
 }
 
 .icon {
@@ -1077,9 +1085,4 @@ hr {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
 }/*# sourceMappingURL=main.css.map */
