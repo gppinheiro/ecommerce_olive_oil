@@ -5,6 +5,7 @@ header {
     align-items: center;
     height: $header-height;
     background-color: $white;
+    border-bottom: 1px solid $brown-gold;
 
     & a {
         font-family: $primary-font-family;
@@ -22,6 +23,10 @@ header {
 
         & p {
             margin: 0;
+        }
+
+        & img {
+            max-height: calc($header-height - 2px);
         }
     }
 

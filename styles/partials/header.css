@@ -3,6 +3,7 @@ header {
   align-items: center;
   height: 8vh;
   background-color: #fff;
+  border-bottom: 1px solid #8b763d;
 }
 header a {
   font-family: "Fira Sans", sans-serif;
@@ -19,6 +20,9 @@ header a span {
 }
 header a p {
   margin: 0;
+}
+header a img {
+  max-height: calc(8vh - 2px);
 }
 header a:hover {
   color: #8b763d;

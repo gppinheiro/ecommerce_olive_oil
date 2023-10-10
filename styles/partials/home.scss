@@ -1,0 +1,89 @@
+@import '../utils/variables.scss';
+
+#home.slider {
+    height: calc(100vh - $header-height);
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        animation: slider 16.5s infinite;
+        opacity: 0.5;
+
+        &:nth-child(1) {
+            background-image: url('../../img/background/olives_background.png');
+            animation-delay: 0s;
+        }
+
+        &:nth-child(2) {
+            background-image: url('../../img/background/glass-bottle-with-olive-oil-gray-background.jpg');
+            animation-delay: -5.5s;
+        }
+
+        &:nth-child(3) {
+            background-image: url('../../img/background/olive-tree-brunch.jpg');
+            animation-delay: -11s;
+        }
+    }
+
+    .text_middle {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        color: $black;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        & .subheading {
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 800;
+            color: $brown-gold;
+            letter-spacing: 4px; 
+        }
+
+        & h1 {
+            font-size: 60px;
+            font-weight: 800; 
+        }
+
+        & button {
+            margin-top: 32px;
+            background-color: $black;
+            color: $white;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        & .btn:hover {
+            background-color: $brown-gold;
+        }
+        
+    }
+}
+
+@keyframes slider {
+    0%, 30%, 100% {
+      transform: translateX(0);
+      animation-timing-function: ease;
+    }
+    33% {
+      transform: translateX(-100%);
+      animation-timing-function: step-end;
+    }
+    97% {
+      transform: translateX(100%);
+      animation-timing-function: ease;
+    }
+}

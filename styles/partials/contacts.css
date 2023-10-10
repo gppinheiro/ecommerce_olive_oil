@@ -238,11 +238,4 @@
     width: 75%;
     margin-left: 12.5%;
   }
-}
-@media only screen and (min-height: 1000px) {
-  footer {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-  }
 }/*# sourceMappingURL=contacts.css.map */
