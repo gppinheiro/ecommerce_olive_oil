@@ -4,12 +4,16 @@ header {
   height: 8vh;
   background-color: #fff;
   border-bottom: 1px solid #8b763d;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 header a {
   font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
   display: flex;
-  font-size: 1em;
-  line-height: 1em;
   transition: all 0.2s linear;
   color: #1b1b1b;
   align-items: center;
@@ -45,54 +49,9 @@ header div.icons {
 }
 header div.icons a {
   justify-content: center;
-  border-left: 1px #8b763d solid;
+  border-left: 1px solid #8b763d;
   flex: 1;
   max-width: 8vh;
-}
-
-.icon {
-  font-size: 1.5rem;
-}
-
-.nav__links {
-  align-items: center;
-  padding: 0px;
-  margin: 0px;
-}
-
-.nav__links li {
-  display: inline-block;
-  padding: 0px 8px;
-}
-
-.menu-button {
-  display: none;
-}
-
-.menu-button .bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  transition: all 0.3s ease-in-out;
-  background-color: #212529;
-}
-
-.badge {
-  color: #212529;
-  padding: 0;
-}
-
-.badge:after {
-  content: attr(value);
-  font-size: 12px;
-  background: red;
-  border-radius: 50%;
-  padding: 0 5px;
-  position: relative;
-  left: -8px;
-  top: -10px;
-  opacity: 0.9;
 }
 
 #home.slider {
@@ -100,6 +59,7 @@ header div.icons a {
   position: relative;
   overflow: hidden;
   width: 100vw;
+  margin-top: 8vh;
 }
 #home.slider .slide {
   position: absolute;
@@ -167,7 +127,6 @@ header div.icons a {
   font-weight: 400;
   font-size: 16px;
   line-height: 16px;
-  font-size: 16px;
   margin-bottom: 0;
 }
 #home.slider .text_middle .btn:hover {

@@ -5,13 +5,14 @@ header {
     align-items: center;
     height: $header-height;
     background-color: $white;
-    border-bottom: 1px solid $brown-gold;
+    border-bottom: $border-1px;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
 
     & a {
-        font-family: $primary-font-family;
+        @include a;
         display: flex;
-        font-size: 1em;
-        line-height: 1em;
         transition: all 0.2s linear;
         color: $black;
         align-items: center;
@@ -54,7 +55,7 @@ header {
 
             & a {
                 justify-content: center;
-                border-left: 1px $brown-gold solid;
+                border-left: $border-1px;
                 flex: 1;
                 max-width: $header-height;
             }
@@ -62,48 +63,48 @@ header {
     }
 }
 
-.icon {
-    font-size: 1.5rem;
-}
+// .icon {
+//     font-size: 1.5rem;
+// }
 
-.nav__links {
-    align-items: center;
-    padding: 0px;
-    margin: 0px;
-}
+// .nav__links {
+//     align-items: center;
+//     padding: 0px;
+//     margin: 0px;
+// }
 
-.nav__links li {
-    display: inline-block;
-    padding: 0px 8px;
-}
+// .nav__links li {
+//     display: inline-block;
+//     padding: 0px 8px;
+// }
 
-.menu-button {
-    display: none;
-}
+// .menu-button {
+//     display: none;
+// }
 
-.menu-button .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #212529;
-}
+// .menu-button .bar {
+//     display: block;
+//     width: 25px;
+//     height: 3px;
+//     margin: 5px auto;
+//     -webkit-transition: all 0.3s ease-in-out;
+//     transition: all 0.3s ease-in-out;
+//     background-color: #212529;
+// }
 
-.badge {
-    color: #212529;
-    padding: 0;
-}
+// .badge {
+//     color: #212529;
+//     padding: 0;
+// }
 
-.badge:after{
-    content:attr(value);
-    font-size:12px;
-    background: red;
-    border-radius:50%;
-    padding: 0 5px;
-    position:relative;
-    left:-8px;
-    top:-10px;
-    opacity:0.9;
-}
+// .badge:after{
+//     content:attr(value);
+//     font-size:12px;
+//     background: red;
+//     border-radius:50%;
+//     padding: 0 5px;
+//     position:relative;
+//     left:-8px;
+//     top:-10px;
+//     opacity:0.9;
+// }

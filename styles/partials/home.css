@@ -3,6 +3,7 @@
   position: relative;
   overflow: hidden;
   width: 100vw;
+  margin-top: 8vh;
 }
 #home.slider .slide {
   position: absolute;

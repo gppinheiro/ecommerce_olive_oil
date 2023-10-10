@@ -57,3 +57,10 @@ $line-height-m: 16px;
     font-size: $font-m;
     line-height: $line-height-m;
 }
+
+@mixin a {
+    font-family: $primary-font-family;
+    font-weight: $font-weight-normal;
+    font-size: $font-m;
+    line-height: $line-height-m;
+}
