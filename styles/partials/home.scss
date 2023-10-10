@@ -45,17 +45,16 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-        & .subheading {
-            text-transform: uppercase;
-            font-size: 18px;
-            font-weight: 800;
-            color: $brown-gold;
-            letter-spacing: 4px; 
+        & h1 {
+            @include h1;
+            font-size: 64px;
+            line-height: 64px;
         }
 
-        & h1 {
-            font-size: 60px;
-            font-weight: 800; 
+        & .subheading {
+            @include h2;
+            color: $brown-gold;
+            letter-spacing: 4px; 
         }
 
         & button {
@@ -64,6 +63,12 @@
             color: $white;
             display: flex;
             gap: 0.5rem;
+            align-items: center;
+
+            & p {
+                @include p;
+                margin-bottom: 0;
+            }
         }
 
         & .btn:hover {

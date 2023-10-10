@@ -39,16 +39,23 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#home.slider .text_middle .subheading {
+#home.slider .text_middle h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 18px;
   text-transform: uppercase;
+  font-size: 64px;
+  line-height: 64px;
+}
+#home.slider .text_middle .subheading {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
   font-size: 18px;
-  font-weight: 800;
+  line-height: 18px;
+  text-transform: uppercase;
   color: #8b763d;
   letter-spacing: 4px;
-}
-#home.slider .text_middle h1 {
-  font-size: 60px;
-  font-weight: 800;
 }
 #home.slider .text_middle button {
   margin-top: 32px;
@@ -56,6 +63,14 @@
   color: #fff;
   display: flex;
   gap: 0.5rem;
+  align-items: center;
+}
+#home.slider .text_middle button p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 0;
 }
 #home.slider .text_middle .btn:hover {
   background-color: #8b763d;
