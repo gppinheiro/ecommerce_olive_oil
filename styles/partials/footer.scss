@@ -1,9 +1,9 @@
-@import './constants.scss';
+@import '../utils/variables.scss';
 
 footer {
-    background-color: $gold;
+    background: $brown-gold-rgb;
     color: $white;
-    padding: 24px 10%;
+    padding: 2rem 10%;
     left: 0;
 
     &:after {
@@ -12,13 +12,37 @@ footer {
         clear: both;
     }
 
-    h6 {
-        text-transform: uppercase;
-        font-weight: bold;
+    & a {
+        @include p;
+        cursor: pointer;
     }
 
-    a {
-        cursor: pointer;
+    & .container {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        & div {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+
+            & h3 {
+                @include h3;
+                margin-bottom: 1rem;
+            }
+
+            & a {
+                display: flex;
+                align-items: center;
+                margin-bottom: 0.5rem;
+                gap: 0.5rem;
+
+                &:hover {
+                    color: $brown-gold !important;
+                }
+            }
+        }
     }
 
     .copyrigths {
