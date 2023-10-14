@@ -1,0 +1,28 @@
+@import '../utils/variables.scss';
+
+.nw-s {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    & h1 {
+        @include h1;
+        color: $brown-gold;
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    & h3 {
+        @include h3;
+        text-align: center;
+    }
+}
