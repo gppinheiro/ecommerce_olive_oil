@@ -58,5 +58,8 @@
   color: #fff;
   margin-bottom: 0;
 }
+.products .product .add-to-cart:hover {
+  background-color: rgba(139, 118, 61, 0.7);
+}
 
 /* Produto *//*# sourceMappingURL=store.css.map */

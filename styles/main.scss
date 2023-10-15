@@ -1,17 +1,20 @@
+@import './partials/cart.scss';
+@import './partials/footer.scss';
 @import './partials/header.scss';
 @import './partials/home.scss';
-@import './partials/store.scss';
 @import './partials/sections.scss';
-@import './partials/footer.scss';
+@import './partials/store.scss';
+@import './utils/variables.scss';
 
-@import './partials/about.scss';
-@import './partials/contacts.scss';
-@import './partials/team.scss';
+// @import './partials/about.scss';
+// @import './partials/contacts.scss';
+// @import './partials/team.scss';
 
 body {
     display:flex; 
     flex-direction:column;
-    background-color: #fff; 
+    background-color: $white; 
+    justify-content: space-between;
 }
 
 li, a, button {

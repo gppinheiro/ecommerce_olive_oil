@@ -57,6 +57,10 @@
 				color: $white;
 				margin-bottom: 0;
 			}
+
+			&:hover {
+                background-color: $brown-gold-rgb;
+            }
 		}
 	}
 }

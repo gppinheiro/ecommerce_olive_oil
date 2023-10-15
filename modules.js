@@ -1,1 +1,1 @@
-export {Profile} from './js/profile.js';
+export {Cart} from './js/cart.js';

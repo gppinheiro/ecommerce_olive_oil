@@ -1,0 +1,104 @@
+.cart {
+  margin-top: 8vh;
+}
+.cart::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.cart table {
+  width: 100%;
+}
+.cart table thead td {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #8b763d;
+}
+.cart table thead td:last-child {
+  text-align: right;
+}
+.cart table tbody {
+  padding: 1rem 0;
+  border-bottom: 1px solid #8b763d;
+}
+.cart table tbody td.img {
+  width: 80px;
+}
+.cart table tbody td:last-child {
+  text-align: right;
+}
+.cart table tbody td .remove {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  font-size: 14px;
+  color: #8b763d;
+  margin-top: 0.25rem;
+}
+.cart table tbody td .remove:hover {
+  text-decoration: underline;
+}
+.cart table tbody td .price {
+  color: #757575;
+}
+.cart table tbody td a {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #1b1b1b;
+}
+.cart table tbody td input[type=number] {
+  width: 4rem;
+  padding: 0.5rem;
+  border: 1px solid #8b763d;
+  color: #757575;
+  border-radius: 0.25rem;
+}
+.cart .subtotal {
+  text-align: right;
+  margin: 2.5rem 0;
+}
+.cart .subtotal .text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding-right: 2.5rem;
+  color: #8b763d;
+}
+.cart .subtotal .price {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #1b1b1b;
+}
+.cart .buttons {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.cart .buttons .btn {
+  display: flex;
+  background-color: #8b763d;
+  color: #fff;
+}
+.cart .buttons .btn p {
+  color: #fff;
+  margin-bottom: 0;
+}
+.cart .buttons .btn:hover {
+  background-color: rgba(139, 118, 61, 0.7);
+}
+
+/*ENVIO*//*# sourceMappingURL=cart.css.map */
