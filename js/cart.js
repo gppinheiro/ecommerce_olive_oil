@@ -96,7 +96,7 @@ class Cart {
                 </button>
                 <button type="button" class="btn" id="checkout_cart">
                     <span class="material-symbols-outlined">shopping_cart_checkout</span>
-                    <p>Atualizar</p>
+                    <p>Checkout</p>
                 </button>
             </div>
         </div>`
