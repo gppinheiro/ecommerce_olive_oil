@@ -206,6 +206,22 @@ header div.icons a {
   flex: 1;
   max-width: 8vh;
 }
+header div.icons a#shopping_cart:nth-child(1) {
+  position: relative;
+}
+header div.icons a#shopping_cart #badge {
+  color: #fff;
+  position: absolute;
+  font-size: 14px !important;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+header div.icons a#shopping_cart #badge:after {
+  content: attr(value);
+  background: #8b763d;
+  border-radius: 50%;
+  padding: 0 5px;
+}
 
 #home.slider {
   height: 92vh;

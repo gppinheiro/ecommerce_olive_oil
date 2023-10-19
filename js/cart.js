@@ -31,13 +31,27 @@ class Cart {
         else this.removeBadge();
     }
 
+    getBadgeElement() {
+        let badge = document.getElementById('badge');
+
+        if(badge == null && this.productsInCart.length) {
+            badge = document.createElement('span');
+            badge.id = 'badge';
+
+            shoppingCartIcon.appendChild(badge);
+        }
+
+        return badge;
+    } 
+
     updateBadge() {
-        shoppingCartIcon.classList.add('badge');
-        shoppingCartIcon.setAttribute('value',this.productsInCart.length);
+        const badge = this.getBadgeElement();
+        badge.setAttribute('value',this.productsInCart.length);
     }
     
     removeBadge() {
-        shoppingCartIcon.classList.remove('badge');
+        const badge = this.getBadgeElement();
+        shoppingCartIcon.removeChild(badge);
     }
 
     showCart() {
