@@ -24,7 +24,7 @@ class Cart {
         this.productsInCart.splice(index,1);
     
         sessionStorage.setItem('productsInCart',JSON.stringify(this.productsInCart));
-        cartDiv.innerHTML += renderCart();
+        cartDiv.innerHTML = this.renderCart();
     
         if(this.productsInCart.length) this.updateBadge();
         else this.removeBadge();
@@ -45,7 +45,7 @@ class Cart {
 
     updateBadge() {
         const badge = this.getBadgeElement();
-        badge.setAttribute('value',this.productsInCart.length);
+        if(badge != null) badge.setAttribute('value',this.productsInCart.length);
     }
     
     removeBadge() {
@@ -66,14 +66,16 @@ class Cart {
     }
 
     _renderEmptyState() {
-        return `<div class='empty-state'>
+        return `<h1>Carrinho</h1>
+                <div class='empty-state'>
                     <h2>Não tem produtos no carrinho.</h2>
                     <img src="../img/empty_state_no_products.jpg">
                 </div>`;
     }
 
     _renderHeader() {
-        return `<div class="content-wrapper">   
+        return `<h1>Carrinho</h1>
+                <div class="content-wrapper">   
                     <table>
                         <thead>
                             <tr>
@@ -96,7 +98,7 @@ class Cart {
                     <td>
                         <a href="">${this.db.getTitle(element.id)}</a>
                         <br>
-                        <a href="javascript:cart.removeProductsFromCart('${element.id}')" class="remove">Remover</a>
+                        <a id="${element.id}_delete_button" class="remove">Remover</a>
                     </td>
                     <td class="price">${this.db.getPrice(element.id)}</td>
                     <td class="quantity">
