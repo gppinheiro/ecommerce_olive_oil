@@ -24,8 +24,7 @@ class Cart {
         this.productsInCart.splice(index,1);
     
         sessionStorage.setItem('productsInCart',JSON.stringify(this.productsInCart));
-        cartDiv.removeChild(document.querySelector('#cart > div'));
-        cartDiv.innerHTML += showCart();
+        cartDiv.innerHTML += renderCart();
     
         if(this.productsInCart.length) this.updateBadge();
         else this.removeBadge();
@@ -54,30 +53,41 @@ class Cart {
         shoppingCartIcon.removeChild(badge);
     }
 
-    showCart() {
+    renderCart() {
         this.productsInCart = JSON.parse(sessionStorage.getItem('productsInCart'));
+
+        if(this.productsInCart==null || this.productsInCart.length == 0) return this._renderEmptyState();
     
-        var cart = `<div class="content-wrapper">   
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td colspan="2">Produto</td>
-                                    <td>Preço</td>
-                                    <td>Quantidade</td>
-                                    <td>Total</td>
-                                </tr>
-                            </thead>
-                            <tbody>`;
-        
-        if(this.productsInCart==null || this.productsInCart.length == 0) 
-            cart +=     
-            `<tr>
-                <td colspan="5" style="text-align:center;">Não tens produtos no carrinho.</td>
-            </tr>`    
-        else
-            this.productsInCart.forEach(element => 
-                cart +=
-                `<tr>
+        let cart = this._renderHeader();
+        this.productsInCart.forEach(element => cart += this._renderElement(element));
+        cart += this._renderFooter();
+    
+        return cart;
+    }
+
+    _renderEmptyState() {
+        return `<div class='empty-state'>
+                    <h2>Não tem produtos no carrinho.</h2>
+                    <img src="../img/empty_state_no_products.jpg">
+                </div>`;
+    }
+
+    _renderHeader() {
+        return `<div class="content-wrapper">   
+                    <table>
+                        <thead>
+                            <tr>
+                                <td colspan="2">Produto</td>
+                                <td>Preço</td>
+                                <td>Quantidade</td>
+                                <td>Total</td>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+    }
+
+    _renderElement(element) {
+        return `<tr>
                     <td class="img">
                         <a href="">
                             <img src="${this.db.getImage(element.id)}" width="50" height="60">
@@ -86,7 +96,7 @@ class Cart {
                     <td>
                         <a href="">${this.db.getTitle(element.id)}</a>
                         <br>
-                        <a href="javascript:removeProductsFromTheBasket('${element.id}')" class="remove">Remover</a>
+                        <a href="javascript:cart.removeProductsFromCart('${element.id}')" class="remove">Remover</a>
                     </td>
                     <td class="price">${this.db.getPrice(element.id)}</td>
                     <td class="quantity">
@@ -94,10 +104,10 @@ class Cart {
                     </td>
                     <td class="price">${this.db.getPrice(element.id).split(' ')[0] * element.numberOfProductsInTheCart}</td>
                 </tr>`  
-            );
-        
-        cart +=
-    `          </tbody>
+    }
+
+    _renderFooter() {
+        return `</tbody>
             </table>
             <div class="subtotal">
                 <span class="text">Subtotal</span>
@@ -113,9 +123,7 @@ class Cart {
                     <p>Checkout</p>
                 </button>
             </div>
-        </div>`
-    
-        return cart;
+        </div>`;
     }
 
 }

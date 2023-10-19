@@ -9,6 +9,21 @@
         clear: both;
     }
 
+    & .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        & h2 {
+            text-align: center;
+        }
+    
+        & img {
+            width: 40%;
+        }
+    }
+
     & table {
         width: 100%;
 

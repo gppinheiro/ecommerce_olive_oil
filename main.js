@@ -10,7 +10,7 @@ window.addEventListener("load", (event) => {
         addToCartButton.click(cart.addProductsToCart("azeitonas",1));
     }
     else if(location.href.includes("cart.html")) {
-        document.getElementById('cart').innerHTML += cart.showCart();
+        document.getElementById('cart').innerHTML += cart.renderCart();
         cart.updateBadge();
     }
 });

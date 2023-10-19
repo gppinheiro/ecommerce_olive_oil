@@ -6,6 +6,18 @@
   display: block;
   clear: both;
 }
+.cart .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.cart .empty-state h2 {
+  text-align: center;
+}
+.cart .empty-state img {
+  width: 40%;
+}
 .cart table {
   width: 100%;
 }
