@@ -113,7 +113,7 @@ class Cart {
                     </td>
                     <td class="price">${this.db.getPrice(element.id)}</td>
                     <td class="quantity">
-                        <input type="number" name="quantity-${element.id}" value="${element.numberOfProductsInTheCart}" min="1" max="${element.quantity}" required>
+                        <input type="number" id="quantity_${element.id}" value="${element.numberOfProductsInTheCart}" min="1" max="${element.quantity}" required>
                     </td>
                     <td class="price">${this.db.getPrice(element.id).split(' ')[0] * element.numberOfProductsInTheCart}</td>
                 </tr>`  
