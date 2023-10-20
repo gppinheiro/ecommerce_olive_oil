@@ -1,4 +1,16 @@
 class DB {
+    getProducts() {
+        let product = {
+            id : 'azeitonas',
+            imageSource: 'img/azeitonas.jpeg',
+            title: 'Azeitonas Mistas',
+            shortDescription: 'Experimente as diferentes azeitonas.',
+            price: '15.99 $/kg'
+        };
+
+        return [product, product, product, product];
+    }
+
     getImage(id) {
         if (id=="azeitonas") {
             return 'img/azeitonas.jpeg';
@@ -14,6 +26,12 @@ class DB {
     getPrice(id) {
         if (id=="azeitonas") {
             return '15.99 $/kg';
+        }
+    }
+
+    getShortDescription(id) {
+        if (id=="azeitonas") {
+            return 'Experimente as diferentes azeitonas.';
         }
     }
     

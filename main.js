@@ -1,15 +1,27 @@
-import {Cart} from './modules.js';
+import { Cart } from './modules.js';
+import { Store } from './modules.js';
 
-const addToCartButton = document.getElementById('azeitonas');
-
+const idAddToCartButton = "_add_to_cart_button";
 const idDeleteButton = "_delete_button";
+
+const productsDiv = document.getElementById('products');
 const cartDiv = document.getElementById('cart');
 
+const store = new Store();
 const cart = new Cart();
 
 window.addEventListener("load", (event) => {
     if(location.href.includes("index.html")) {
-        addToCartButton.click(cart.addProductsToCart("azeitonas",1));
+        productsDiv.innerHTML += store.renderStore();
+        cart.updateBadge();
+
+        const addToCartButtons = productsDiv.querySelectorAll(`[id$="${idAddToCartButton}"]`);
+        addToCartButtons.forEach( (button) => {
+            const productId = button.id.split("_")[0];
+            button.onclick = () => { 
+                cart.addProductsToCart("azeitonas",1); 
+            };
+        });
     }
     else if(location.href.includes("cart.html")) {
         cartDiv.innerHTML += cart.renderCart();
@@ -17,9 +29,10 @@ window.addEventListener("load", (event) => {
 
         const cartDeleteButtons = cartDiv.querySelectorAll(`[id$="${idDeleteButton}"]`);
         cartDeleteButtons.forEach( (button) => {
-            debugger;
             const productId = button.id.split("_")[0];
-            button.onclick = function() { cart.removeProductsFromCart(productId) };
+            button.onclick = () => { 
+                cart.removeProductsFromCart(productId) 
+            };
         });
     }
 });

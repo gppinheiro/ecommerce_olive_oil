@@ -13,6 +13,7 @@ class Cart {
         const product = {'id':id, 'numberOfProductsInTheCart': quantity, 'quantity': this.db.getQuantity(id)};
         this.productsInCart.push(product);
         sessionStorage.setItem('productsInCart',JSON.stringify(this.productsInCart));
+        this.updateBadge();
     }
     
     removeProductsFromCart(id) {
@@ -31,6 +32,8 @@ class Cart {
     }
 
     getBadgeElement() {
+        this._updateProductsInCart();
+        
         let badge = document.getElementById('badge');
 
         if(badge == null && this.productsInCart.length) {
@@ -43,6 +46,10 @@ class Cart {
         return badge;
     } 
 
+    _updateProductsInCart() {
+        this.productsInCart = JSON.parse(sessionStorage.getItem('productsInCart'));
+    }
+
     updateBadge() {
         const badge = this.getBadgeElement();
         if(badge != null) badge.setAttribute('value',this.productsInCart.length);
@@ -54,7 +61,7 @@ class Cart {
     }
 
     renderCart() {
-        this.productsInCart = JSON.parse(sessionStorage.getItem('productsInCart'));
+        this._updateProductsInCart();
 
         if(this.productsInCart==null || this.productsInCart.length == 0) return this._renderEmptyState();
     
