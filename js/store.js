@@ -43,8 +43,6 @@ class Store {
                     </button>
                 </a>`;
     }
-
-
 }
 
 export {Store};

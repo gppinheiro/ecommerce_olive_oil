@@ -15,25 +15,15 @@ class Cart {
         sessionStorage.setItem('productsInCart',JSON.stringify(this.productsInCart));
         this.updateBadge();
     }
-    
-    removeProductsFromCart(id) {
-        let index = 0;
-        this.productsInCart.forEach(element => {
-            if(element.id==id) return;
-            index+=1;
-        });
-        this.productsInCart.splice(index,1);
-    
-        sessionStorage.setItem('productsInCart',JSON.stringify(this.productsInCart));
-        cartDiv.innerHTML = this.renderCart();
-    
-        if(this.productsInCart.length) this.updateBadge();
-        else this.removeBadge();
+
+    updateBadge() {
+        const badge = this.getBadgeElement();
+        if(badge != null) badge.setAttribute('value',this.productsInCart.length);
     }
 
     getBadgeElement() {
         this._updateProductsInCart();
-        
+
         let badge = document.getElementById('badge');
 
         if(badge == null && this.productsInCart.length) {
@@ -49,13 +39,23 @@ class Cart {
     _updateProductsInCart() {
         this.productsInCart = JSON.parse(sessionStorage.getItem('productsInCart'));
     }
-
-    updateBadge() {
-        const badge = this.getBadgeElement();
-        if(badge != null) badge.setAttribute('value',this.productsInCart.length);
-    }
     
-    removeBadge() {
+    removeProductsFromCart(id) {
+        let index = 0;
+        this.productsInCart.forEach(element => {
+            if(element.id==id) return;
+            index+=1;
+        });
+        this.productsInCart.splice(index,1);
+    
+        sessionStorage.setItem('productsInCart',JSON.stringify(this.productsInCart));
+        cartDiv.innerHTML = this.renderCart();
+    
+        if(this.productsInCart.length) this.updateBadge();
+        else this._removeBadge();
+    }
+
+    _removeBadge() {
         const badge = this.getBadgeElement();
         shoppingCartIcon.removeChild(badge);
     }
