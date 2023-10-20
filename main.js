@@ -19,7 +19,7 @@ window.addEventListener("load", (event) => {
         addToCartButtons.forEach( (button) => {
             const productId = button.id.split("_")[0];
             button.onclick = () => { 
-                cart.addProductsToCart("azeitonas",1); 
+                cart.addProductsToCart(productId,1); 
             };
         });
     }
@@ -34,5 +34,10 @@ window.addEventListener("load", (event) => {
                 cart.removeProductsFromCart(productId) 
             };
         });
+
+        const updateCart = document.getElementById("update_cart");
+        updateCart.onclick = () => {
+            cart.updateCart();
+        };
     }
 });

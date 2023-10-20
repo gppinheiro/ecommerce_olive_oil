@@ -12,8 +12,12 @@ class Cart {
     addProductsToCart(id, quantity) {
         const product = {'id':id, 'numberOfProductsInTheCart': quantity, 'quantity': this.db.getQuantity(id)};
         this.productsInCart.push(product);
-        sessionStorage.setItem('productsInCart',JSON.stringify(this.productsInCart));
+        this._setSessionStorage();
         this.updateBadge();
+    }
+
+    _setSessionStorage() {
+        sessionStorage.setItem('productsInCart',JSON.stringify(this.productsInCart));
     }
 
     updateBadge() {
@@ -22,7 +26,7 @@ class Cart {
     }
 
     getBadgeElement() {
-        this._updateProductsInCart();
+        this._getItemSessionStorage();
 
         let badge = document.getElementById('badge');
 
@@ -36,7 +40,7 @@ class Cart {
         return badge;
     } 
 
-    _updateProductsInCart() {
+    _getItemSessionStorage() {
         this.productsInCart = JSON.parse(sessionStorage.getItem('productsInCart'));
     }
     
@@ -48,7 +52,7 @@ class Cart {
         });
         this.productsInCart.splice(index,1);
     
-        sessionStorage.setItem('productsInCart',JSON.stringify(this.productsInCart));
+        this._setSessionStorage();
         cartDiv.innerHTML = this.renderCart();
     
         if(this.productsInCart.length) this.updateBadge();
@@ -61,7 +65,7 @@ class Cart {
     }
 
     renderCart() {
-        this._updateProductsInCart();
+        this._getItemSessionStorage();
 
         if(this.productsInCart==null || this.productsInCart.length == 0) return this._renderEmptyState();
     
@@ -96,7 +100,7 @@ class Cart {
     }
 
     _renderElement(element) {
-        return `<tr>
+        return `<tr id="product_${element.id}">
                     <td class="img">
                         <a href="">
                             <img src="${this.db.getImage(element.id)}" width="50" height="60">
@@ -109,7 +113,7 @@ class Cart {
                     </td>
                     <td class="price">${this.db.getPrice(element.id)}</td>
                     <td class="quantity">
-                        <input type="number" name="quantity-${element.id}" value="${element.numberOfProductsInTheCart}" min="1" max="${element.quantity}" placeholder="Quantity" required>
+                        <input type="number" name="quantity-${element.id}" value="${element.numberOfProductsInTheCart}" min="1" max="${element.quantity}" required>
                     </td>
                     <td class="price">${this.db.getPrice(element.id).split(' ')[0] * element.numberOfProductsInTheCart}</td>
                 </tr>`  
@@ -120,7 +124,7 @@ class Cart {
             </table>
             <div class="subtotal">
                 <span class="text">Subtotal</span>
-                <span class="price">0$</span>
+                <span class="price subtotal_placeholder">${this._calculateSubtotal()} $</span>
             </div>
             <div class="buttons">
                 <button type="button" class="btn" id="update_cart">
@@ -133,6 +137,48 @@ class Cart {
                 </button>
             </div>
         </div>`;
+    }
+
+    _calculateSubtotal() {
+        let subtotal = 0;
+
+        this.productsInCart.forEach( (product) => {
+            subtotal += this.db.getPrice(product.id).split(' ')[0] * product.numberOfProductsInTheCart;
+        });
+
+        return subtotal;
+    }
+
+    updateCart() {
+        const cartProducts = cartDiv.querySelectorAll(`[id^='product_']`);
+        
+        let productIndex = 0;
+        cartProducts.forEach( (product) => {
+            const quantity = this._updateProductPrice(product);
+            this._updateProductQuantity(productIndex, quantity);
+            productIndex++;
+        });
+
+        this._updateSubtotal();
+    }
+
+    _updateProductPrice(product) {
+        const productId = product.id.split("_")[1];
+        const quantity = parseInt(product.getElementsByTagName('input')[0].value);
+        const price = this.db.getPrice(productId).split(' ')[0] * quantity;
+
+        product.getElementsByClassName('price')[1].innerHTML = `${price} $`;
+
+        return quantity;
+    }
+
+    _updateProductQuantity(productIndex, quantity) {
+        this.productsInCart[productIndex].numberOfProductsInTheCart = quantity;
+        this._setSessionStorage();
+    }
+
+    _updateSubtotal() {
+        cartDiv.getElementsByClassName("subtotal_placeholder")[0].innerHTML = `${this._calculateSubtotal()} $`;
     }
 
 }
