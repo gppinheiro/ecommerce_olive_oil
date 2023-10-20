@@ -181,6 +181,19 @@ class Cart {
         cartDiv.getElementsByClassName("subtotal_placeholder")[0].innerHTML = `${this._calculateSubtotal()} $`;
     }
 
+    limitQuantitySelected(event) {
+        const typed = event.key;
+            
+        if(!isNaN(typed)) event.preventDefault();
+        
+        if ( (event.target.value + typed) <= event.target.max) {
+            event.target.value += typed;
+        } 
+        else {
+            event.target.value = event.target.max;
+        }
+    }
+
 }
 
 export {Cart};

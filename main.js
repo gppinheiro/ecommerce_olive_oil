@@ -38,16 +38,7 @@ window.addEventListener("load", (event) => {
         const quantityInputs = cartDiv.querySelectorAll(`[id^='quantity_']`);
         quantityInputs.forEach( (input) => {
             input.onkeydown = (e) => {
-                const typed = +e.key;
-            
-                if(!isNaN(typed)) e.preventDefault();
-                
-                if ( +(e.target.value + typed) <= input.max) {
-                    input.value += typed
-                } 
-                else {
-                    input.value = input.max;
-                }
+                cart.limitQuantitySelected(e);
             }
         });
 
