@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .cart {
   margin-top: 8vh;
 }
@@ -114,6 +115,235 @@
 }
 
 /*ENVIO*/
+#checkout {
+  margin-top: 8vh;
+}
+#checkout::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#checkout .progress-indicator {
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+}
+#checkout .progress-indicator .multi-steps {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding: 0;
+}
+#checkout .progress-indicator .multi-steps li {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  counter-increment: stepNum;
+  text-align: center;
+  display: table-cell;
+  position: relative;
+  color: #8b763d;
+}
+#checkout .progress-indicator .multi-steps li:before {
+  content: "✓";
+  display: block;
+  margin: 0 auto 0.25rem;
+  background-color: #fff;
+  width: 36px;
+  height: 36px;
+  line-height: 32px;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid #8b763d;
+  border-radius: 50%;
+}
+#checkout .progress-indicator .multi-steps li:after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #8b763d;
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  z-index: -1;
+}
+#checkout .progress-indicator .multi-steps li:last-child:after {
+  display: none;
+}
+#checkout .progress-indicator .multi-steps li.is-active:before {
+  background-color: #fff;
+  border-color: #8b763d;
+}
+#checkout .progress-indicator .multi-steps li.is-active ~ li {
+  color: #757575;
+}
+#checkout .progress-indicator .multi-steps li.is-active ~ li:before {
+  background-color: #ededed;
+  border-color: #ededed;
+}
+#checkout .content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+#checkout .content #order-overview {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ededed;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  align-self: flex-start;
+}
+#checkout .content #order-overview #order-details {
+  padding: 1rem;
+}
+#checkout .content #order-overview #order-details .order-items {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ededed;
+}
+#checkout .content #order-overview #order-details .order-items .order-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+}
+#checkout .content #order-overview #order-details .order-items .order-item img {
+  width: 80px;
+}
+#checkout .content #order-overview #order-details .order-items .order-item .details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+#checkout .content #order-overview #order-details .order-items .order-item .details p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  margin: 0;
+}
+#checkout .content #order-overview #order-details .order-items .order-item .details .info {
+  flex-direction: column;
+}
+#checkout .content #order-overview #order-details .order-items .order-item .details .info .description {
+  color: #757575;
+  font-size: 12px;
+}
+#checkout .content #order-overview #order-details .order-items .order-item .details .price {
+  color: #8b763d;
+}
+#checkout .content #order-overview #order-summary {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+#checkout .content #order-overview #order-summary div {
+  display: flex;
+  justify-content: space-between;
+}
+#checkout .content #order-overview #order-summary div.subtotal, #checkout .content #order-overview #order-summary div.taxes, #checkout .content #order-overview #order-summary div.delivery {
+  color: #757575;
+  font-size: 12px;
+}
+#checkout .content #order-overview #order-summary div.total {
+  color: #8b763d;
+}
+#checkout .content #order-overview #order-summary div p {
+  margin: 0;
+}
+#checkout .content #shipping {
+  display: flex;
+  flex-direction: column;
+}
+#checkout .content #shipping .form {
+  display: grid;
+  gap: 1rem;
+}
+#checkout .content #shipping .form .field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ededed;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+#checkout .content #shipping .form .field .field_label {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  font-size: 14px;
+  color: #757575;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+#checkout .content #shipping .form .field .field_input {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  width: 100%;
+}
+#checkout .content #shipping .form .field:focus-within {
+  border-color: #1b1b1b;
+}
+#checkout .content #shipping .form .fields {
+  display: grid;
+  gap: 1rem;
+}
+#checkout .content #shipping .form .fields.fields-2 {
+  grid-template-columns: 1fr 1fr;
+}
+#checkout .content #shipping .form .fields.fields-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#checkout .content #shipping button {
+  align-self: flex-end;
+}
+#checkout .content #payment {
+  display: none;
+}
+#checkout .content #review {
+  display: none;
+}
+#checkout .btn {
+  margin-top: 2rem;
+  display: flex;
+  background-color: #8b763d;
+  color: #fff;
+  gap: 0.5rem;
+}
+#checkout .btn p {
+  color: #fff;
+  margin-bottom: 0;
+}
+#checkout .btn:hover {
+  background-color: rgba(139, 118, 61, 0.7);
+}
+#checkout h2 {
+  text-align: left;
+  color: #8b763d;
+}
+
+.remain-steps:before, #checkout .progress-indicator .multi-steps li.is-active:before, #checkout .progress-indicator .multi-steps li.is-active ~ li:before {
+  content: counter(stepNum);
+  font-family: inherit;
+  font-weight: 700;
+}
+.remain-steps:after, #checkout .progress-indicator .multi-steps li.is-active:after, #checkout .progress-indicator .multi-steps li.is-active ~ li:after {
+  background-color: #ededed;
+}
+
 footer {
   background: rgba(139, 118, 61, 0.7);
   color: #fff;

@@ -1,0 +1,272 @@
+@import '../utils/variables.scss';
+
+#checkout {
+    margin-top: $header-height;
+
+    &::after {
+        content:'';
+        display: block;
+        clear: both;
+    }
+
+    & .progress-indicator {
+        margin-top: 2rem;
+        list-style: none;
+        padding: 0;
+
+        .multi-steps{
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            padding: 0;
+
+            & li {
+                @include p;
+                counter-increment: stepNum;
+                text-align: center;
+                display: table-cell;
+                position: relative;
+                color: $brown-gold;
+
+                &:before{
+                    content: '\2713';
+                    display: block;
+                    margin: 0 auto 0.25rem;
+                    background-color: $white;
+                    width: 36px;
+                    height: 36px;
+                    line-height: 32px;
+                    text-align: center;
+                    font-weight: bold;
+                    border: $border-2px;
+                    border-radius: 50%;
+                }
+
+                &:after{
+                    content: '';
+                    height: 2px;
+                    width: 100%;
+                    background-color: $brown-gold;
+                    position: absolute;
+                    top: 16px;
+                    left: 50%;
+                    z-index: -1;
+                }
+
+                &:last-child {
+                    &:after{
+                      display: none;
+                    }
+                }
+
+                &.is-active {
+                    @extend .remain-steps;
+                    
+                    &:before {
+                      background-color: $white;
+                      border-color: $brown-gold;
+                    }
+
+                    ~ li {
+                        @extend .remain-steps;
+                        color: $grey;
+
+                        &:before{
+                          background-color: $light-grey;
+                          border-color: $light-grey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .content {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+
+        & #order-overview {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid $light-grey;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            align-self: flex-start;
+
+            & #order-details {
+                padding: 1rem;
+
+                & .order-items {
+                    display: flex;
+                    flex-direction: column;
+                    list-style: none;
+                    margin: 0;
+                    padding-left: 0;
+                    padding-bottom: 0.5rem;
+                    border-bottom: 1px solid $light-grey;
+
+                    & .order-item {
+                        display: grid;
+                        grid-template-columns: 80px 1fr;
+                        align-items: center;
+
+                        & img {
+                            width: 80px;
+                        }
+
+                        & .details {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            gap: 5rem;
+
+                            & p {
+                                @include p;
+                                margin: 0;
+                            }
+
+                            & .info {
+                                flex-direction: column;
+
+                                & .description {
+                                    color: $grey;
+                                    font-size: $font-xs;
+                                }
+                            }
+
+                            & .price {
+                                color: $brown-gold;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & #order-summary {
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem 1rem 1rem 1rem;
+
+                & div {
+                    display: flex;
+                    justify-content: space-between;
+
+                    &.subtotal,
+                    &.taxes,
+                    &.delivery {
+                        color: $grey;
+                        font-size: $font-xs;
+                    }
+
+                    &.total {
+                        color: $brown-gold;
+                    }
+
+                    & p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        & #shipping {
+            display: flex;
+            flex-direction: column;
+
+            & .form {
+                display: grid;
+                gap: 1rem;
+
+                & .field {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid $light-grey;
+                    padding: 0.5rem;
+                    border-radius: 0.25rem;
+
+                    & .field_label {
+                        @include p;
+                        font-size: $font-s;
+                        color: $grey;
+                        text-transform: uppercase;
+                        margin-bottom: 0.25rem;
+                    }
+
+                    & .field_input {
+                        @include p;
+                        padding: 0;
+                        border: 0;
+                        outline: 0;
+                        font-weight: bold;
+                        width: 100%;
+                    }
+
+                    &:focus-within {
+                        border-color: $black;
+                    }
+                }
+
+                & .fields {
+                    display: grid;
+                    gap: 1rem;
+
+                    &.fields-2 {
+                        grid-template-columns: 1fr 1fr;
+                    }
+                    
+                    &.fields-3 {
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+                }
+            }
+
+            & button {
+                align-self: flex-end;
+            }
+        }
+
+        & #payment {
+            display: none;
+        }
+
+        & #review {
+            display: none;
+        }
+    }
+
+    & .btn {
+        margin-top: 2rem;
+        display: flex;
+        background-color: $brown-gold;
+        color: $white;
+        gap: 0.5rem;
+
+        & p {
+            color: $white;
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            background-color: $brown-gold-rgb;
+        }
+    }
+
+    & h2 {
+        text-align: left;
+        color: $brown-gold;
+    }
+}
+
+.remain-steps {
+    &:before {
+        content: counter(stepNum);
+        font-family: inherit;
+        font-weight: 700;
+      }
+      
+    &:after{
+        background-color: $light-grey;
+    }
+}
