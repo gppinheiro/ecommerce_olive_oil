@@ -1,8 +1,8 @@
-import { DB } from './db.js';
+import { ProgressIndicator } from './enums.js';
 
 class Checkout {
-    constructor() {
-        this.db = new DB();
+    constructor(db) {
+        this.db = db;
         this.subtotal = 0;
     }
 
@@ -63,6 +63,26 @@ class Checkout {
         return this.subtotal + this._calculateTaxes();
     }
 
+    renderOrderAddress() {
+        const firstName = sessionStorage.getItem('firstName');
+        const lastName = sessionStorage.getItem('lastName');
+        const address = sessionStorage.getItem('address');
+        const city = sessionStorage.getItem('city');
+        const country = sessionStorage.getItem('country');
+        const zipCode = sessionStorage.getItem('zipCode');
+
+        const orderAddress = document.getElementById('order-address');
+        orderAddress.innerHTML = this._renderAddress(firstName, lastName, address, city, country, zipCode);
+    }
+
+    _renderAddress(firstName, lastName, address, city, country, zipCode) {
+        return `<h3>Endereco de Envio</h3>
+                <p>${firstName} ${lastName}</p>
+                <p>${address}</p>
+                <p>${zipCode}, ${city}</p>
+                <p>${country}</p>`;
+    }
+
     saveShippingInformation() {
         const firstName = document.getElementById('firstname').value;
         const lastName = document.getElementById('lastname').value;
@@ -80,7 +100,7 @@ class Checkout {
     }
 
     moveToPayment() {
-        this._setProgressIndicator(1, 3);
+        this._setProgressIndicator(ProgressIndicator.Shipping, ProgressIndicator.Payment);
         this._setContent('payment');
     }
 
@@ -97,12 +117,12 @@ class Checkout {
     }
 
     moveToShipping() {
-        this._setProgressIndicator(3, 1);
+        this._setProgressIndicator(ProgressIndicator.Payment, ProgressIndicator.Shipping);
         this._setContent('shipping');
     }
 
     moveToConfirmation() {
-        this._setProgressIndicator(3, 5);
+        this._setProgressIndicator(ProgressIndicator.Payment, ProgressIndicator.Review);
         this._setContent('review');
     }
 }

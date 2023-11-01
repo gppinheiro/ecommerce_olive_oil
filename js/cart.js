@@ -1,11 +1,9 @@
-import { DB } from './db.js';
-
 const cartDiv = document.getElementById('cart');
 const shoppingCartIcon = document.getElementById('shopping_cart');
 
 class Cart {
-    constructor() {
-        this.db = new DB();
+    constructor(db) {
+        this.db = db;
         this.productsInCart = [];
     }
 

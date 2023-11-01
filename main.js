@@ -1,5 +1,6 @@
 import { Cart } from './modules.js';
 import { Checkout } from './modules.js';
+import { DB } from './modules.js';
 import { Store } from './modules.js';
 
 const idAddToCartButton = "_add_to_cart_button";
@@ -8,9 +9,10 @@ const idDeleteButton = "_delete_button";
 const productsDiv = document.getElementById('products');
 const cartDiv = document.getElementById('cart');
 
-const store = new Store();
-const cart = new Cart();
-const checkout = new Checkout();
+const db = new DB();
+const cart = new Cart(db);
+const checkout = new Checkout(db);
+const store = new Store(db);
 
 window.addEventListener("load", (event) => {
     if(location.href.includes("index.html")) {
@@ -56,6 +58,7 @@ window.addEventListener("load", (event) => {
         shippingButton.onclick = () => {
             checkout.saveShippingInformation();
             checkout.moveToPayment();
+            checkout.renderOrderAddress();
         }
 
         const backButton = document.getElementById('back_button');

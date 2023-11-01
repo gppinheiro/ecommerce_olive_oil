@@ -207,6 +207,13 @@
   font-weight: bold;
   width: 100%;
 }
+#checkout .content #shipping .form .field input:-webkit-autofill,
+#checkout .content #shipping .form .field input:-webkit-autofill:hover,
+#checkout .content #shipping .form .field input:-webkit-autofill:focus,
+#checkout .content #shipping .form .field input:-webkit-autofill:active {
+  box-shadow: 0 0 0 5000px white inset;
+  -webkit-text-fill-color: #1b1b1b;
+}
 #checkout .content #shipping .form .field:focus-within {
   border-color: #1b1b1b;
 }

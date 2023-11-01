@@ -1,8 +1,6 @@
-import { DB } from './db.js';
-
 class Store {
-    constructor() {
-        this.db = new DB();
+    constructor(db) {
+        this.db = db;
     }
 
     renderStore() {
