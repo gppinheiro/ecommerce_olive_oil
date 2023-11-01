@@ -110,6 +110,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 16px;
+  font-size: 18px;
   margin: 0;
 }
 #checkout .content #order-overview #order-details .order-items .order-item .details .info {
@@ -117,7 +118,7 @@
 }
 #checkout .content #order-overview #order-details .order-items .order-item .details .info .description {
   color: #757575;
-  font-size: 12px;
+  font-size: 14px;
 }
 #checkout .content #order-overview #order-details .order-items .order-item .details .price {
   color: #8b763d;
@@ -133,13 +134,41 @@
 }
 #checkout .content #order-overview #order-summary div.subtotal, #checkout .content #order-overview #order-summary div.taxes, #checkout .content #order-overview #order-summary div.delivery {
   color: #757575;
-  font-size: 12px;
+  font-size: 14px;
 }
 #checkout .content #order-overview #order-summary div.total {
   color: #8b763d;
+  font-size: 18px;
 }
 #checkout .content #order-overview #order-summary div p {
   margin: 0;
+}
+#checkout .content #order-overview #order-address {
+  display: none;
+  flex-direction: column;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+#checkout .content #order-overview #order-address h3 {
+  border-top: 1px solid #ededed;
+  padding-top: 1.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  text-align: left;
+  text-transform: none;
+  color: #8b763d;
+}
+#checkout .content #order-overview #order-address p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 0.25rem;
+  color: #757575;
 }
 #checkout .content #shipping {
   display: flex;
@@ -196,9 +225,40 @@
 }
 #checkout .content #payment {
   display: none;
+  flex-direction: column;
 }
 #checkout .content #review {
   display: none;
+  flex-direction: column;
+}
+#checkout .content.payment, #checkout .content.review {
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+#checkout .content.payment #order-overview, #checkout .content.review #order-overview {
+  align-self: center;
+}
+#checkout .content.payment #order-address, #checkout .content.review #order-address {
+  display: flex !important;
+}
+#checkout .content.payment #shipping {
+  display: none;
+}
+#checkout .content.payment #payment {
+  display: flex;
+}
+#checkout .content.payment #review {
+  display: none;
+}
+#checkout .content.review #shipping {
+  display: none;
+}
+#checkout .content.review #payment {
+  display: none;
+}
+#checkout .content.review #review {
+  display: flex;
 }
 #checkout .btn {
   margin-top: 2rem;

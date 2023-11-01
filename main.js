@@ -1,4 +1,5 @@
 import { Cart } from './modules.js';
+import { Checkout } from './modules.js';
 import { Store } from './modules.js';
 
 const idAddToCartButton = "_add_to_cart_button";
@@ -9,6 +10,7 @@ const cartDiv = document.getElementById('cart');
 
 const store = new Store();
 const cart = new Cart();
+const checkout = new Checkout();
 
 window.addEventListener("load", (event) => {
     if(location.href.includes("index.html")) {
@@ -46,5 +48,8 @@ window.addEventListener("load", (event) => {
         updateCart.onclick = () => {
             cart.updateCart();
         };
+    }
+    else if(location.href.includes("checkout.html")) {
+        checkout.renderOrderOverview();
     }
 });
