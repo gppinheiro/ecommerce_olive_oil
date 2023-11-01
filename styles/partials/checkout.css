@@ -227,6 +227,11 @@
   display: none;
   flex-direction: column;
 }
+#checkout .content .payment-buttons {
+  display: none;
+  width: 400px;
+  justify-content: space-between;
+}
 #checkout .content #review {
   display: none;
   flex-direction: column;
@@ -248,6 +253,9 @@
 #checkout .content.payment #payment {
   display: flex;
 }
+#checkout .content.payment .payment-buttons {
+  display: flex;
+}
 #checkout .content.payment #review {
   display: none;
 }
@@ -255,6 +263,9 @@
   display: none;
 }
 #checkout .content.review #payment {
+  display: none;
+}
+#checkout .content.review .payment-buttons {
   display: none;
 }
 #checkout .content.review #review {

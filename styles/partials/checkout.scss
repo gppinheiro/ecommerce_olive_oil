@@ -257,6 +257,12 @@
             flex-direction: column;
         }
 
+        .payment-buttons {
+            display: none;
+            width: 400px;
+            justify-content: space-between;
+        }
+
         & #review {
             display: none;
             flex-direction: column;
@@ -286,6 +292,10 @@
                 display: flex;
             }
 
+            & .payment-buttons {
+                display: flex;
+            }
+
             & #review {
                 display: none;
             }
@@ -297,6 +307,10 @@
             }
 
             & #payment {
+                display: none;
+            }
+
+            & .payment-buttons {
                 display: none;
             }
             
