@@ -51,5 +51,21 @@ window.addEventListener("load", (event) => {
     }
     else if(location.href.includes("checkout.html")) {
         checkout.renderOrderOverview();
+
+        const shippingButton = document.getElementById('shipping_button');
+        shippingButton.onclick = () => {
+            checkout.saveShippingInformation();
+            checkout.moveToPayment();
+        }
+
+        const backButton = document.getElementById('back_button');
+        backButton.onclick = () => {
+            checkout.moveToShipping();
+        }
+
+        const paymentButton = document.getElementById('payment_button');
+        paymentButton.onclick = () => {
+            checkout.moveToConfirmation();
+        }
     }
 });
