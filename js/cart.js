@@ -24,7 +24,7 @@ class Cart {
     }
 
     getBadgeElement() {
-        this._getItemSessionStorage();
+        this._getItemsSessionStorage();
 
         let badge = document.getElementById('badge');
 
@@ -38,8 +38,9 @@ class Cart {
         return badge;
     } 
 
-    _getItemSessionStorage() {
-        this.productsInCart = JSON.parse(sessionStorage.getItem('productsInCart'));
+    _getItemsSessionStorage() {
+        const storageItems = JSON.parse(sessionStorage.getItem('productsInCart'));
+        if(storageItems != null) this.productsInCart = storageItems; 
     }
     
     removeProductsFromCart(id) {
@@ -63,7 +64,7 @@ class Cart {
     }
 
     renderCart() {
-        this._getItemSessionStorage();
+        this._getItemsSessionStorage();
 
         if(this.productsInCart==null || this.productsInCart.length == 0) return this._renderEmptyState();
     
