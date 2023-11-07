@@ -46,13 +46,13 @@ class Checkout {
     }
 
     _renderOrderSummary() {
-        const subtotalElement = document.getElementsByClassName('subtotal')[0].lastChild;
-        const taxesElement = document.getElementsByClassName('taxes')[0].lastChild;
-        const totalElement = document.getElementsByClassName('total')[0].lastChild;
+        const subtotalElement = document.getElementsByClassName('subtotal')[0].childNodes[3];
+        const taxesElement = document.getElementsByClassName('taxes')[0].childNodes[3];
+        const totalElement = document.getElementsByClassName('total')[0].childNodes[3];
 
         subtotalElement.innerHTML = `${this.subtotal}$`;
-        taxesElement.innerHTML = `${this._calculateTaxes()}$`;
-        totalElement.innerHTML = `${this._calculateTotal()}$`;
+        taxesElement.innerHTML = `${this._calculateTaxes().toFixed(2)}$`;
+        totalElement.innerHTML = `${this._calculateTotal().toFixed(2)}$`;
     }
 
     _calculateTaxes() {

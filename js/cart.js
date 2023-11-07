@@ -63,6 +63,12 @@ class Cart {
         shoppingCartIcon.removeChild(badge);
     }
 
+    removeAllProducts() {
+        sessionStorage.clear();
+        this.productsInCart = [];
+        this.updateBadge();
+    }
+
     renderCart() {
         this._getItemsSessionStorage();
 

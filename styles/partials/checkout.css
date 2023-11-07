@@ -82,7 +82,7 @@
 #checkout .content #order-overview #order-details {
   padding: 1rem;
 }
-#checkout .content #order-overview #order-details .order-items {
+#checkout .content #order-overview #order-details #order-items {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -91,20 +91,20 @@
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #ededed;
 }
-#checkout .content #order-overview #order-details .order-items .order-item {
+#checkout .content #order-overview #order-details #order-items .order-item {
   display: grid;
-  grid-template-columns: 80px 3fr 1fr;
+  grid-template-columns: 80px 1fr;
   align-items: center;
 }
-#checkout .content #order-overview #order-details .order-items .order-item img {
+#checkout .content #order-overview #order-details #order-items .order-item img {
   width: 80px;
 }
-#checkout .content #order-overview #order-details .order-items .order-item .details {
+#checkout .content #order-overview #order-details #order-items .order-item .details {
   display: flex;
   justify-content: space-between;
-  gap: 2.5rem;
+  white-space: nowrap;
 }
-#checkout .content #order-overview #order-details .order-items .order-item .details p {
+#checkout .content #order-overview #order-details #order-items .order-item .details p {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -112,15 +112,16 @@
   font-size: 18px;
   margin: 0;
 }
-#checkout .content #order-overview #order-details .order-items .order-item .details .info {
-  min-width: 6rem;
+#checkout .content #order-overview #order-details #order-items .order-item .details .info {
+  white-space: nowrap;
+  margin-right: 2.5rem;
 }
-#checkout .content #order-overview #order-details .order-items .order-item .details .info .description {
+#checkout .content #order-overview #order-details #order-items .order-item .details .info .description {
   color: #757575;
   font-size: 14px;
   margin-top: 0.25rem;
 }
-#checkout .content #order-overview #order-details .order-items .order-item .details .price {
+#checkout .content #order-overview #order-details #order-items .order-item .details .price {
   color: #8b763d;
 }
 #checkout .content #order-overview #order-summary {

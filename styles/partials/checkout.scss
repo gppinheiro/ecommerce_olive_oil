@@ -97,7 +97,7 @@
             & #order-details {
                 padding: 1rem;
 
-                & .order-items {
+                & #order-items {
                     display: flex;
                     flex-direction: column;
                     list-style: none;
@@ -108,7 +108,7 @@
 
                     & .order-item {
                         display: grid;
-                        grid-template-columns: 80px 3fr 1fr;
+                        grid-template-columns: 80px 1fr;
                         align-items: center;
 
                         & img {
@@ -118,7 +118,7 @@
                         & .details {
                             display: flex;
                             justify-content: space-between;
-                            gap: 2.5rem;
+                            white-space: nowrap;
 
                             & p {
                                 @include p;
@@ -127,7 +127,8 @@
                             }
 
                             & .info {
-                                min-width: 6rem;
+                                white-space: nowrap;
+                                margin-right: 2.5rem;
 
                                 & .description {
                                     color: $grey;
@@ -313,7 +314,7 @@
 
         &.review {
             display: flex;
-            
+
             & #shipping {
                 display: none;
             }

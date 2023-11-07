@@ -46,12 +46,20 @@ window.addEventListener("load", (event) => {
             }
         });
 
-        const updateCart = document.getElementById("update_cart");
+        const updateCart = document.getElementById('update_cart');
         updateCart.onclick = () => {
             cart.updateCart();
         };
+
+        const checkoutCart = document.getElementById('checkout_cart');
+        checkoutCart.onclick = () => {
+            const baseUrl = location.href.replace('cart.html','');
+            const checkoutUrl = `${baseUrl}checkout.html`;
+            window.open(checkoutUrl, '_self');
+        };
     }
     else if(location.href.includes("checkout.html")) {
+        cart.updateBadge();
         checkout.renderOrderOverview();
 
         const shippingButton = document.getElementById('shipping_button');
@@ -69,6 +77,7 @@ window.addEventListener("load", (event) => {
         const paymentButton = document.getElementById('payment_button');
         paymentButton.onclick = () => {
             checkout.moveToConfirmation();
+            cart.removeAllProducts();
         }
     }
 });
