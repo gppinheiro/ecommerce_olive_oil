@@ -751,6 +751,7 @@ body {
   flex-direction: column;
   background-color: #fff;
   justify-content: space-between;
+  min-height: 100vh;
 }
 
 li, a, button {
