@@ -228,6 +228,13 @@
 #checkout .content #shipping .form .fields.fields-3 {
   grid-template-columns: 1fr 1fr 1fr;
 }
+#checkout .content #shipping .form .form-check {
+  margin-top: 1rem;
+}
+#checkout .content #shipping .form#form-invoice {
+  margin-top: 1rem;
+  display: none;
+}
 #checkout .content #shipping button {
   align-self: flex-end;
 }

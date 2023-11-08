@@ -83,22 +83,6 @@ class Checkout {
                 <p>${country}</p>`;
     }
 
-    saveShippingInformation() {
-        const firstName = document.getElementById('firstname').value;
-        const lastName = document.getElementById('lastname').value;
-        const address = document.getElementById('address').value;
-        const city = document.getElementById('city').value;
-        const country = document.getElementById('country').value;
-        const zipCode = document.getElementById('zipcode').value;
-
-        sessionStorage.setItem('firstName', firstName);
-        sessionStorage.setItem('lastName', lastName);
-        sessionStorage.setItem('address', address);
-        sessionStorage.setItem('city', city);
-        sessionStorage.setItem('country', country);
-        sessionStorage.setItem('zipCode', zipCode);
-    }
-
     moveToPayment() {
         this._setProgressIndicator(ProgressIndicator.Shipping, ProgressIndicator.Payment);
         this._setContent('payment');
@@ -124,6 +108,38 @@ class Checkout {
     moveToConfirmation() {
         this._setProgressIndicator(ProgressIndicator.Payment, ProgressIndicator.Review);
         this._setContent('review');
+    }
+
+    saveShippingInformation() {
+        const name = document.getElementById('name').value;
+        const nif = document.getElementById('nif').value;
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const country = document.getElementById('country').value;
+        const zipCode = document.getElementById('zipcode').value;
+
+        sessionStorage.setItem('name', name);
+        sessionStorage.setItem('nif', nif);
+        sessionStorage.setItem('address', address);
+        sessionStorage.setItem('city', city);
+        sessionStorage.setItem('country', country);
+        sessionStorage.setItem('zipCode', zipCode);
+    }
+
+    saveInvoiceInformation() {
+        const name = document.getElementById('name-invoice').value;
+        const nif = document.getElementById('nif-invoice').value;
+        const address = document.getElementById('address-invoice').value;
+        const city = document.getElementById('city-invoice').value;
+        const country = document.getElementById('country-invoice').value;
+        const zipCode = document.getElementById('zipcode-invoice').value;
+
+        sessionStorage.setItem('name-invoice', name);
+        sessionStorage.setItem('nif-invoice', nif);
+        sessionStorage.setItem('address-invoice', address);
+        sessionStorage.setItem('city-invoice', city);
+        sessionStorage.setItem('country-invoice', country);
+        sessionStorage.setItem('zipCode-invoice', zipCode);
     }
 }
 

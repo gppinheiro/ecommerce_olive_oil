@@ -62,6 +62,12 @@ window.addEventListener("load", (event) => {
         cart.updateBadge();
         checkout.renderOrderOverview();
 
+        const invoiceCheckbox = document.getElementById('invoice-different');
+        invoiceCheckbox.onclick = () => {
+            const display = document.getElementById('form-invoice').style.display;
+            document.getElementById('form-invoice').style.display = display == 'none' || display == '' ? 'grid' : 'none';
+        }
+
         const shippingButton = document.getElementById('shipping_button');
         shippingButton.onclick = () => {
             checkout.saveShippingInformation();

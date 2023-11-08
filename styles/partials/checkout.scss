@@ -254,6 +254,15 @@
                         grid-template-columns: 1fr 1fr 1fr;
                     }
                 }
+
+                & .form-check {
+                    margin-top: 1rem;
+                }
+
+                &#form-invoice {
+                    margin-top: 1rem;
+                    display: none;
+                }
             }
 
             & button {
